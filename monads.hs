@@ -1,6 +1,6 @@
 -- parse functions
 f :: String -> Integer
-     f x = read x
+f x = read x
 
 g :: Integer -> String
 g y = show y
