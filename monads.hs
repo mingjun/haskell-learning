@@ -1,6 +1,6 @@
 -- parse functions
 f :: String -> Integer
-f x = read x
+     f x = read x
 
 g :: Integer -> String
 g y = show y
@@ -44,11 +44,12 @@ get3Chars = do x <- getChar
                z <- getChar
                return [x,y,z]
 
-getChars :: Int -> IO String
-getChars  0    = do return []
-getChars (n+1) = do x <- getChar
-                    xs <- getChars n
-                    return (x:xs)
+getChars :: Int -> IO [Char]
+getChars 0 = do return []
+getChars n = do x <- getChar
+                xs <- (getChars (n-1))
+                return (x:xs)
+
 -- >> functions
 put2Chars :: [Char] -> IO ()
 put2Chars (x:(y:xs)) =
