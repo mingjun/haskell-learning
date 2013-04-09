@@ -53,7 +53,7 @@ nat2int (Succ n) = nat2int n + 1
 
 int2nat :: Integer -> Nat
 int2nat 0 = Zero
-int2nat (n+1) = Succ (int2nat n)
+int2nat n = Succ (int2nat n-1)
 
 
 
